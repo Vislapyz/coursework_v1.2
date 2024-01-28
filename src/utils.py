@@ -17,6 +17,11 @@ def operations_from_the_list(data):
     return operation_sorted
 
 
+def date_conversions(date):
+    date = date.split('T')[0].split('-')
+    return f'{date[2]}.{date[1]}{date[0]}'
+
+
 def data_task_condition(data_number):
     if 'Счет'in data_number:
         n_account = data_number.slit(' ')[1]
@@ -31,3 +36,4 @@ def data_task_condition(data_number):
         card_number = data_number.split(' ')[1]
         card_name = data_number.split(' ')[0]
         return f'{card_name} {card_number[0:4] } {card_number[5:7]}** **** {card_number[-4:]}'
+
