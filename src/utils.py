@@ -2,12 +2,19 @@ import json
 
 
 def data_operations(filename: str):
+    """
+    Получение списка json и его распаковка
+    """
     with open(filename, 'r', encoding='utf-8') as file:
         data = json.load(file)
         return data
 
 
 def operations_from_the_list(data: list):
+    """
+    Выбирает из списка все выполненные операции в статусе EXECUTED
+    с дальнейшей сортировкой этого списка по дате
+    """
     state_executed = []
     for operation in data:
         if 'state' in operation and operation['state'] == 'EXECUTED':
@@ -18,11 +25,17 @@ def operations_from_the_list(data: list):
 
 
 def date_conversions(date: str):
+    """
+    Вывод даты в преобразованном виде
+    """
     date = date.split('T')[0].split('-')
     return f'{date[2]}.{date[1]}.{date[0]}'
 
 
 def data_task_condition(data_number: str):
+    """
+     Функция выводит полученные данные по условию задания
+    """
     if "Счет" in data_number:
         num_chek = data_number.split(' ')[1]
         name_chek = data_number.split(' ')[0]

@@ -2,12 +2,12 @@ from src.utils import data_operations, date_conversions, operations_from_the_lis
 
 
 def main():
-    global operation
+    # Получение списка json и сортировка его
     filename = 'operations.json'
     operations_sorted = operations_from_the_list(data_operations(filename))
-
+    # Получение пяти последних операций
     last_five_operations = operations_sorted[0:5]
-
+    # Вывод данных в требуемой форме
     for operation in last_five_operations:
         date = date_conversions(operation['date'])
         print(f"{date} {operation['description']}")
