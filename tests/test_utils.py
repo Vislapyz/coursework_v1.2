@@ -7,7 +7,16 @@ def test_data_operations():
 
 def test_operations_from_the_list(test_fixture):
     assert len(operations_from_the_list(test_fixture)) == 5
-    assert operations_from_the_list(test_fixture)[0]['date'] == "2424-12-13T22:46:21.935582"
+    assert operations_from_the_list(test_fixture)[0]['date'] == "2019-01-26T15:40:13.413061"
+    assert operations_from_the_list(test_fixture)[3]['date'] == "2018-04-04T17:33:34.701093"
+
 
 def test_date_conversions(test_fixture):
-    assert date_conversions(operations_from_the_list(test_fixture))[0]['date'] == '13.12.2424'
+    assert date_conversions(operations_from_the_list(test_fixture)[0]['date']) == '26.01.2019'
+    assert date_conversions(operations_from_the_list(test_fixture)[3]['date']) == '04.04.2018'
+
+
+def test_data_task_condition(test_fixture):
+    assert data_task_condition(operations_from_the_list(test_fixture)[2]['from']) == 'Счет ** 8655'
+    assert data_task_condition(operations_from_the_list(test_fixture)[3]['from']) == 'Visa Gold 5999 14** **** 6353'
+    assert data_task_condition(operations_from_the_list(test_fixture)[0]['from']) == 'Maestro 4598 00** **** 4501'

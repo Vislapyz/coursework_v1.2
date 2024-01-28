@@ -7,7 +7,7 @@ def test_fixture():
         {
             "id": 863064926,
             "state": "EXECUTED",
-            "date": "2424-12-13T22:46:21.935582",
+            "date": "2018-12-08T22:46:21.935582",
             "operationAmount": {
                 "amount": "41096.24",
                 "currency": {
@@ -51,7 +51,7 @@ def test_fixture():
         {
             "id": 147815167,
             "state": "EXECUTED",
-            "date": "2424-12-12T00:00:00.000000",
+            "date": "2019-01-26T15:40:13.413061",
             "operationAmount": {
                 "amount": "50870.71",
                 "currency": {
